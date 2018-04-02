@@ -36,4 +36,4 @@ The values `'!'` and `'skip'` are special, and may be used instead of a color to
 4. `buttonBg`
 5. `mentionHighlightLink`
 
-Protip: pipe the output to a clipboard utility for easy copying.
+**ProTip!** Pipe the output to a clipboard utility for easy copying.
