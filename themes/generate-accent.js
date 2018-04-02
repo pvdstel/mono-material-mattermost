@@ -43,7 +43,10 @@ if (replaceAll) {
     const maxReplace = Math.min(accented.length, dataArgs.length - 1);
     for (let i = 0; i < maxReplace; ++i) {
         const accent = accented[i];
-        theme[accent] = makeColorValue(dataArgs[1 + i]);
+        const color = dataArgs[1 + i];
+        if (color === '!' || color === 'skip') continue;
+
+        theme[accent] = makeColorValue(color);
     }
 }
 
