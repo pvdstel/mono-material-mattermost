@@ -19,7 +19,7 @@
     "buttonBg": "#039be5",
     "buttonColor": "#ffffff",
     "errorTextColor": "#e53935",
-    "mentionHighlightBg": "#fff9c4",
-    "mentionHighlightLink": "#0288d1",
+    "mentionHighlightBg": "#71706A",
+    "mentionHighlightLink": "#81d4fa",
     "codeTheme": "github"
 }

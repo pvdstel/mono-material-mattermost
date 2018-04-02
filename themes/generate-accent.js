@@ -20,7 +20,12 @@ const makeColorValue = (color) => color.startsWith('#') ? color : `#${color}`;
 
 
 // Define what should be accented
-const accented = ['sidebarTextActiveBorder', 'linkColor', 'buttonBg'];
+const accented = [
+    'sidebarTextActiveBorder',
+    'linkColor',
+    'buttonBg',
+    'mentionHighlightLink'
+];
 
 
 // Load the theme
