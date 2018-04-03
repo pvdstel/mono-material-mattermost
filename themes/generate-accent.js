@@ -16,7 +16,17 @@ if (dataArgs.length < 2) {
 
 
 // Define helper functions
+const parseColor = (valueString) => makeColorValue(tryDefaultColor(valueString));
 const makeColorValue = (color) => color.startsWith('#') ? color : `#${color}`;
+const tryDefaultColor = (colorCode) => {
+    const defaultAccents = require('./material-default-accents');
+    let [base, value] = colorCode.split('.');
+
+    if (!defaultAccents.hasOwnProperty(base)) return colorCode;
+
+    if (!value) value = '500';
+    return defaultAccents[base][value];
+}
 
 
 // Define what should be accented
@@ -29,15 +39,15 @@ const accented = [
 ];
 
 
-// Load the theme
-const theme = require(`./${args[0]}`);
+// Load the theme and accents
+const theme = require(`./${args[0]}.json`);
 
 
 // Replace accented theme parts
 const replaceAll = args.some(a => a === '-a' || a === '--all');
 if (replaceAll) {
     for (let accent of accented) {
-        theme[accent] = makeColorValue(dataArgs[1]);
+        theme[accent] = parseColor(dataArgs[1]);
     }
 } else {
     const maxReplace = Math.min(accented.length, dataArgs.length - 1);
@@ -46,7 +56,7 @@ if (replaceAll) {
         const color = dataArgs[1 + i];
         if (color === '!' || color === 'skip') continue;
 
-        theme[accent] = makeColorValue(color);
+        theme[accent] = parseColor(color);
     }
 }
 

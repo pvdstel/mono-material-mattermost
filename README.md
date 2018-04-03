@@ -26,7 +26,7 @@ node generate-accent <theme> <color1> <other colors> [-p] [-a]
 
 The `-p` switch pretty-prints the JSON output, and the `-a` switch applies the first color to all elements that accept an accent color.
 
-The colors may be passed with or without a leading `#`, but should be in hexadecimal format. The script contains a list of *n* theme elements that may receive an accent color. If *m* colors are given as arguments, *min(n, m)* colors are replaced, in order.
+The colors may be passed with or without a leading `#`, but should be in hexadecimal format or one of the default Material colors such as `lightblue` or `lightblue.700`. The script contains a list of *n* theme elements that may receive an accent color. If *m* colors are given as arguments, *min(n, m)* colors are replaced, in order.
 
 The values `'!'` and `'skip'` are special, and may be used instead of a color to skip a replacement. This allows for a replacement of the first and third color, while skipping the second. The list currently consists of the following theme elements:
 
