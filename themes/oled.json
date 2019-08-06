@@ -21,5 +21,5 @@
     "errorTextColor": "#e53935",
     "mentionHighlightBg": "#1C1C16",
     "mentionHighlightLink": "#039be5",
-    "codeTheme": "github"
+    "codeTheme": "monokai"
 }
